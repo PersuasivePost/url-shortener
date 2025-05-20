@@ -3,10 +3,11 @@
 A full-stack URL shortening service with NestJS backend and React frontend.
 
 Frontend:
-![1747760404340](image/README/1747760404340.png)
+![1747760680241](image/README/1747760680241.png)
+![1747760842796](image/README/1747760842796.png)
 
 Database:
-![1747760423598](image/README/1747760423598.png)
+![1747760871829](image/README/1747760871829.png)
 
 ## Features
 
