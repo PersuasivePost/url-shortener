@@ -20,7 +20,7 @@ function App() {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:3000/shorten", {
+      const response = await fetch("/api/shorten", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
