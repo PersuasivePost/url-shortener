@@ -8,6 +8,7 @@ import { nanoid } from 'nanoid';
 @Injectable()
 export class ShortenerService {
   constructor(private prisma: PrismaService) {}
+
   async createShortUrlDto(dto: createShortUrlDto) {
     // const { nanoid } = await import('nanoid'); //
     const shortUrl = nanoid(8); // to generate a short url
@@ -49,6 +50,16 @@ export class ShortenerService {
       throw new NotFoundException('Short URL expired');
 
     return data.originalUrl;
+  }
+
+  async healthCheck() {
+    try {
+      // Try to fetch one record from the shortUrl table
+      await this.prisma.shortUrl.findFirst();
+      return { status: 'ok', db: 'ok' };
+    } catch (e) {
+      return { status: 'ok', db: 'error', error: e.message };
+    }
   }
 }
 
