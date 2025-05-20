@@ -36,7 +36,7 @@ function App() {
       }
 
       const data: ShortUrlResponse = await response.json();
-      setShortUrl(`http://localhost:3000/${data.shortUrl}`);
+      setShortUrl(victorious-curiosity-production-f165.up.railway.app`);
     } catch (err) {
       setError(
         err instanceof Error ? err.message : "An unknown error occurred"
