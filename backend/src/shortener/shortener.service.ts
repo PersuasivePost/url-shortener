@@ -3,13 +3,13 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { createShortUrlDto } from './dto/create-short-url.dto';
-// import { nanoid } from 'nanoid';
+import { nanoid } from 'nanoid';
 
 @Injectable()
 export class ShortenerService {
   constructor(private prisma: PrismaService) {}
   async createShortUrlDto(dto: createShortUrlDto) {
-    const { nanoid } = await import('nanoid'); //
+    // const { nanoid } = await import('nanoid'); //
     const shortUrl = nanoid(8); // to generate a short url
 
     const now = new Date();
