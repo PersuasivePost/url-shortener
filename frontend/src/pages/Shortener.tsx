@@ -36,7 +36,9 @@ function App() {
       }
 
       const data: ShortUrlResponse = await response.json();
-      setShortUrl(`victorious-curiosity-production-f165.up.railway.app`);
+      setShortUrl(
+        `victorious-curiosity-production-f165.up.railway.app/${data.shortUrl}`
+      );
     } catch (err) {
       setError(
         err instanceof Error ? err.message : "An unknown error occurred"
