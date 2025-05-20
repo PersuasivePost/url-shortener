@@ -6,7 +6,7 @@ async function bootstrap() {
 
   // enabled CORS for the frontend
   app.enableCors({
-    origin: 'http://localhost:5173',
+    origin: 'victorious-curiosity-production-f165.up.railway.app',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
