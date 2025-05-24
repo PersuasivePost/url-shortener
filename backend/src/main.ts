@@ -6,11 +6,15 @@ async function bootstrap() {
 
   // enabled CORS for the frontend
   app.enableCors({
-    origin: 'victorious-curiosity-production-f165.up.railway.app',
+    origin: [
+      'victorious-curiosity-production-f165.up.railway.app',
+      'http://localhost:3000',
+    ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
 
+  const port = process.env.PORT || 3000;
   await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();
