@@ -7,7 +7,7 @@ async function bootstrap() {
   // enabled CORS for the frontend
   app.enableCors({
     origin: [
-      'victorious-curiosity-production-f165.up.railway.app',
+      'https://url-shortener-iota-eosin.vercel.app',
       'http://localhost:3000',
     ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
