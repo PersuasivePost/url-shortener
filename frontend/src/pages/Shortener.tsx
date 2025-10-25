@@ -20,19 +20,16 @@ function App() {
     setError("");
 
     try {
-      const response = await fetch(
-        "https://url-shortener-backend-xxxx.onrender.com/shortener/shorten",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            originalUrl,
-            expiryDays: expiryDays || undefined,
-          }),
-        }
-      );
+      const response = await fetch("https://url-shortener-gmqn.onrender.com/shortener/shorten", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          originalUrl,
+          expiryDays: expiryDays || undefined,
+        }),
+      });
 
       if (!response.ok) {
         throw new Error("Failed to shorten URL");
@@ -40,7 +37,7 @@ function App() {
 
       const data: ShortUrlResponse = await response.json();
       setShortUrl(
-        `victorious-curiosity-production-f165.up.railway.app/${data.shortUrl}`
+        `https://url-shortener-gmqn.onrender.com/${data.shortUrl}`
       );
     } catch (err) {
       setError(
