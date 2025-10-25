@@ -3,8 +3,8 @@ services:
     name: url-shortener-backend
     env: node
     rootDir: backend
-    buildCommand: yarn install && yarn build && npx prisma generate
-    startCommand: yarn start:prod
+    buildCommand: yarn install && npx prisma generate && yarn build
+    startCommand: npx prisma migrate deploy && yarn start:prod
     healthCheckPath: /shortener/health
     envVars:
       - key: NODE_ENV
