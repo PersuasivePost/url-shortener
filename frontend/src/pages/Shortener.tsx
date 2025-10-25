@@ -20,25 +20,26 @@ function App() {
     setError("");
 
     try {
-      const response = await fetch("https://url-shortener-gmqn.onrender.com/shortener/shorten", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          originalUrl,
-          expiryDays: expiryDays || undefined,
-        }),
-      });
+      const response = await fetch(
+        "https://url-shortener-gmqn.onrender.com/shortener/shorten",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            originalUrl,
+            expiryDays: expiryDays || undefined,
+          }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to shorten URL");
       }
 
       const data: ShortUrlResponse = await response.json();
-      setShortUrl(
-        `https://url-shortener-gmqn.onrender.com/${data.shortUrl}`
-      );
+      setShortUrl(`https://url-shortener-gmqn.onrender.com/${data.shortUrl}`);
     } catch (err) {
       setError(
         err instanceof Error ? err.message : "An unknown error occurred"
