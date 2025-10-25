@@ -9,7 +9,12 @@ async function bootstrap() {
     origin: '*', // Allow all origins temporarily for testing
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
     credentials: true,
-    allowedHeaders: ['Content-Type', 'Accept', 'Authorization', 'X-Requested-With'],
+    allowedHeaders: [
+      'Content-Type',
+      'Accept',
+      'Authorization',
+      'X-Requested-With',
+    ],
     exposedHeaders: ['Content-Type'],
     preflightContinue: false,
     optionsSuccessStatus: 204,

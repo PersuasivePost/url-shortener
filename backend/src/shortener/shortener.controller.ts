@@ -1,6 +1,14 @@
 // controller for shortener, get post method etc
 
-import { Body, Controller, Get, Param, Post, Redirect, Options } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Post,
+  Redirect,
+  Options,
+} from '@nestjs/common';
 import { ShortenerService } from './shortener.service';
 import { createShortUrlDto } from './dto/create-short-url.dto';
 
