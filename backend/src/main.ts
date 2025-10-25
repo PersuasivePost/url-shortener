@@ -10,7 +10,9 @@ async function bootstrap() {
       'https://url-shortener-iota-eosin.vercel.app',
       'http://localhost:3000',
     ],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
+    allowedHeaders: 'Content-Type, Accept, Authorization',
   });
 
   const port = process.env.PORT || 3000;
