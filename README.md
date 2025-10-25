@@ -32,7 +32,11 @@ Database:
 - Vite
 - CSS
 
-### Full Stack Project Using NestJS and React
+## 🌐 Live URLs
+
+- **Frontend:** [https://url-shortener-iota-eosin.vercel.app](https://url-shortener-iota-eosin.vercel.app)  
+- **Backend:** [https://url-shortener-gmqn.onrender.com](https://url-shortener-gmqn.onrender.com)  
+- **Database:** Neon (cloud PostgreSQL)
 
 ```sql
 PersuasivePost
