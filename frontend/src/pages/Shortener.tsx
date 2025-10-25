@@ -20,16 +20,19 @@ function App() {
     setError("");
 
     try {
-      const response = await fetch("/api/shorten", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          originalUrl,
-          expiryDays: expiryDays || undefined,
-        }),
-      });
+      const response = await fetch(
+        "https://url-shortener-backend-xxxx.onrender.com/shortener/shorten",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            originalUrl,
+            expiryDays: expiryDays || undefined,
+          }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to shorten URL");
