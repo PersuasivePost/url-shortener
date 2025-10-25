@@ -51,9 +51,8 @@ function App() {
 
   const copyToClipboard = () => {
     if (!shortUrl) return;
-    const fullUrl = `https://url-shortener-gmqn.onrender.com/${
-      shortUrl.split("/")[1]
-    }`;
+    const shortCode = shortUrl.split("/")[1];
+    const fullUrl = `https://url-shortener-gmqn.onrender.com/shortener/${shortCode}`;
     navigator.clipboard.writeText(fullUrl);
     alert("Copied to clipboard!");
   };
