@@ -8,7 +8,6 @@ async function bootstrap() {
   app.enableCors({
     origin: '*', // Allow all origins temporarily for testing
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
-    credentials: true,
     allowedHeaders: [
       'Content-Type',
       'Accept',
