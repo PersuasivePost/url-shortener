@@ -39,7 +39,7 @@ function App() {
       }
 
       const data: ShortUrlResponse = await response.json();
-      setShortUrl(`url.to/${data.shortUrl}`);
+      setShortUrl(`nestshortener/${data.shortUrl}`);
     } catch (err) {
       setError(
         err instanceof Error ? err.message : "An unknown error occurred"
