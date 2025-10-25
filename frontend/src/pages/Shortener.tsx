@@ -39,7 +39,7 @@ function App() {
       }
 
       const data: ShortUrlResponse = await response.json();
-      setShortUrl(`https://url-shortener-gmqn.onrender.com/${data.shortUrl}`);
+      setShortUrl(`url.to/${data.shortUrl}`);
     } catch (err) {
       setError(
         err instanceof Error ? err.message : "An unknown error occurred"
@@ -51,7 +51,10 @@ function App() {
 
   const copyToClipboard = () => {
     if (!shortUrl) return;
-    navigator.clipboard.writeText(shortUrl);
+    const fullUrl = `https://url-shortener-gmqn.onrender.com/${
+      shortUrl.split("/")[1]
+    }`;
+    navigator.clipboard.writeText(fullUrl);
     alert("Copied to clipboard!");
   };
 
